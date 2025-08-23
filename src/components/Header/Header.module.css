@@ -1,0 +1,24 @@
+.header {
+  max-width: 737px;
+  margin: 55px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.moonIcon {
+  color: var(--color-icon, hsl(0 0% 51%));
+}
+
+.themeToggler {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

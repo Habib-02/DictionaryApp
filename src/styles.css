@@ -1,0 +1,73 @@
+@font-face {
+  font-family: Inter;
+  src: url("../../assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf");
+}
+
+@font-face {
+  font-family: Lora;
+  src: url("../../assets/fonts/lora/Lora-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Incosolata;
+  src: url("../../assets/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+
+:root {
+  /* COLORS */
+  --color-purple: hsl(274 82% 60%);
+  --color-pink: hsl(0 100% 66%);
+
+  --color-black-100: hsl(0 0% 2%);
+  --color-black-200: hsl(0 0% 12%);
+  --color-black-300: hsl(0 0% 18%);
+  --color-black-400: hsl(0 0% 23%);
+
+  --color-grey-100: hsl(0 0% 51%);
+  --color-grey-200: hsl(0 0% 91%);
+  --color-grey-300: hsl(0 0% 96%);
+  --color-grey-400: hsl(210, 20%, 98%);
+  --color-grey-500: hsl(0 0% 100%);
+
+  /* TYPOGRAPHY */
+  --font-sans-serif: "Inter", sans-serif;
+  --font-serif: "Lora", serif;
+  --font-mono: "Inconsolata", monospace;
+
+  --font-heading-medium: 2.4rem;
+  --font-heading-small: 2rem;
+  --font-body-medium: 1.8rem;
+  --font-body-small: 1.4rem;
+}
+
+/* LIGHT THEME */
+.light {
+  --color-bg: var(--color-grey-500);
+  --color-text: var(--color-black-100);
+
+  --color-surface: var(--color-grey-400);
+  --color-border: var(--color-grey-200);
+  --color-accent: var(--color-purple);
+}
+
+/* DARK THEME */
+.dark {
+  --color-bg: var(--color-black-100);
+  --color-text: var(--color-grey-500);
+
+  --color-surface: var(--color-black-200);
+  --color-border: var(--color-black-400);
+  --color-accent: var(--color-pink);
+  --color-icon: var(--color-purple);
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-sans-serif);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}

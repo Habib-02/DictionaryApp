@@ -1,0 +1,81 @@
+.dropdown {
+  position: relative;
+}
+
+.button {
+  width: 120px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  text-align: right;
+  font-size: var(--font-body-small);
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  outline: none;
+}
+
+.button:hover {
+  background-color: var(--color-surface);
+}
+
+.button:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--color-purple);
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--color-purple);
+  transition: transform 0.2s ease;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.option {
+  width: 100%;
+  padding: 0.5rem 1.3rem;
+  text-align: left;
+  font-size: var(--font-body-small);
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: block;
+}
+
+.option:hover {
+  color: var(--color-purple);
+}
+
+.optionSelected {
+  color: var(--color-purple);
+}

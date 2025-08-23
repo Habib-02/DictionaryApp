@@ -1,0 +1,25 @@
+.switchRoot {
+  width: 40px;
+  height: 20px;
+  border: none;
+  background-color: var(--color-grey-100);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.switchRoot[data-state="checked"] {
+  background-color: var(--color-purple);
+}
+
+.switchThumb {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-grey-500);
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.switchThumb[data-state="checked"] {
+  transform: translateX(100%);
+}
