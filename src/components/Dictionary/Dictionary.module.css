@@ -1,0 +1,19 @@
+.sourceUrl {
+  margin-top: 4rem;
+  border-top: 2px solid var(--color-border);
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sourceUrl svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--color-purple);
+}
+
+.sourceUrl span {
+  color: hsl(0 0 46%);
+}

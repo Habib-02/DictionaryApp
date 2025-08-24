@@ -1,0 +1,16 @@
+.searchedWordSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4.5rem;
+}
+
+.searchedWord h1 {
+  font-size: var(--font-heading-large);
+  color: var(--color-text);
+}
+
+.searchedWord span {
+  font-size: var(--font-heading-medium);
+  color: var(--color-purple);
+}

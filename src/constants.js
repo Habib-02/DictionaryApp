@@ -1,2 +1,1 @@
-export const DICTIONARY_API =
-  "https://api.dictionaryapi.dev/api/v2/entries/en/";
+export const DICTIONARY_API = import.meta.env.VITE_API_URL;

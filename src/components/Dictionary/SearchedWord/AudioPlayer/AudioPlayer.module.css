@@ -1,0 +1,19 @@
+.pronounceButton {
+  width: 7.5rem;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  color: var(--color-purple);
+  background-color: hsla(274, 82%, 60%, 0.4);
+  font-size: var(--font-heading-medium);
+  cursor: pointer;
+}
+
+.pronounceButton:disabled {
+  background-color: hsl(0 0% 51%/0.2);
+  color: hsl(0 0% 51%);
+  cursor: not-allowed;
+}

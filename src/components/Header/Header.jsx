@@ -1,8 +1,8 @@
 import styles from "./Header.module.css";
 
 import DictionaryLogo from "@components/DictionaryLogo";
-import FontToggler from "@components/FontToggler";
-import ThemeToggler from "@components/ThemeToggler";
+import FontToggler from "@/components/Header/FontToggler";
+import ThemeToggler from "@/components/Header/ThemeToggler";
 
 import { Moon } from "lucide-react";
 

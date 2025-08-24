@@ -33,6 +33,7 @@
   --font-serif: "Lora", serif;
   --font-mono: "Inconsolata", monospace;
 
+  --font-heading-large: 6.4rem;
   --font-heading-medium: 2.4rem;
   --font-heading-small: 2rem;
   --font-body-medium: 1.8rem;
@@ -42,9 +43,9 @@
 /* LIGHT THEME */
 .light {
   --color-bg: var(--color-grey-500);
-  --color-text: var(--color-black-100);
+  --color-text: var(--color-black-200);
 
-  --color-surface: var(--color-grey-400);
+  --color-surface: var(--color-grey-300);
   --color-border: var(--color-grey-200);
   --color-accent: var(--color-purple);
 }
@@ -52,7 +53,7 @@
 /* DARK THEME */
 .dark {
   --color-bg: var(--color-black-100);
-  --color-text: var(--color-grey-500);
+  --color-text: var(--color-grey-400);
 
   --color-surface: var(--color-black-200);
   --color-border: var(--color-black-400);

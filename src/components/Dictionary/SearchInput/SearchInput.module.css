@@ -1,0 +1,25 @@
+.inputGroup {
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: var(--font-heading-small);
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-purple);
+  transform: translateY(-50%);
+}

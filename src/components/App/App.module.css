@@ -1,4 +1,9 @@
 .App {
   max-width: 737px;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.dictionary {
+  margin-top: 4.5rem;
 }
