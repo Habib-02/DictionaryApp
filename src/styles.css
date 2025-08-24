@@ -1,15 +1,15 @@
 @font-face {
   font-family: Inter;
-  src: url("../../assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf");
+  src: url("/fonts/inter/Inter-VariableFont.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Lora;
-  src: url("../../assets/fonts/lora/Lora-VariableFont_wght.ttf");
+  src: url("/fonts/lora/Lora-VariableFont.ttf") format("truetype");
 }
 @font-face {
   font-family: Incosolata;
-  src: url("../../assets/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf");
+  src: url("/fonts/inconsolata/Inconsolata-VariableFont.ttf") format("truetype");
 }
 
 :root {
