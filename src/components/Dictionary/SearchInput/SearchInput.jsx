@@ -19,8 +19,9 @@ function SearchInput({ onSubmit }) {
           }
           return errors;
         }}
-        onSubmit={(values) => {
+        onSubmit={(values, { resetForm }) => {
           onSubmit(values.search.toLocaleLowerCase());
+          resetForm();
         }}
       >
         {({ errors }) => (

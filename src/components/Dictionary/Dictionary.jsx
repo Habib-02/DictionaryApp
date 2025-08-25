@@ -6,13 +6,13 @@ import { DICTIONARY_API } from "@/constants";
 import Footer from "@components/Dictionary/Footer";
 import ErrorMessage from "@components/Dictionary/ErrorMessage";
 import Meaning from "@components/Dictionary/Meanings";
-
-import styles from "./Dictionary.module.css";
+import Spinner from "./Spinner";
 
 function Dictionary() {
   const [word, setWord] = React.useState("");
   const [wordMeanings, setWordMeanings] = React.useState(null);
   const [isError, setIsError] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   function handleSearchSubmit(word) {
     setWord(word);
@@ -22,14 +22,19 @@ function Dictionary() {
     if (!word) return;
 
     async function fetchMeaning(dictionaryAPI) {
+      setIsLoading(true);
+      setWordMeanings(null);
       try {
         const response = await fetch(dictionaryAPI);
         if (!response.ok) throw new Error("Invalid word");
         const json = await response.json();
         setWordMeanings(json);
         setIsError(false);
+        setIsLoading(false);
       } catch {
         setIsError(true);
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchMeaning(DICTIONARY_API + word);
@@ -38,6 +43,7 @@ function Dictionary() {
   return (
     <>
       <SearchInput onSubmit={handleSearchSubmit} />
+      {isLoading && <Spinner />}
       {isError && <ErrorMessage />}
       {!isError &&
         wordMeanings?.map((wordMeaning, index) => {
