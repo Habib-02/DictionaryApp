@@ -1,26 +1,51 @@
 import React from "react";
 
+import { ErrorMessage, Field, Form, Formik } from "formik";
+
 import { Search } from "lucide-react";
 import styles from "./SearchInput.module.css";
 
 function SearchInput({ onSubmit }) {
-  const searchedWord = React.useRef(null);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const word = searchedWord.current.value.toLowerCase();
-    onSubmit(word);
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={styles.inputGroup}>
-        <input ref={searchedWord} type="text" placeholder="Type the word" />
-        <button className={styles.searchIcon}>
-          <Search />
-        </button>
-      </div>
-    </form>
+    <>
+      <Formik
+        initialValues={{ search: "" }}
+        validateOnBlur={false}
+        validateOnChange={false}
+        validate={(values) => {
+          const errors = {};
+          if (!values.search.trim()) {
+            errors.search = "Whoops, can't be empty";
+          }
+          return errors;
+        }}
+        onSubmit={(values) => {
+          onSubmit(values.search.toLocaleLowerCase());
+        }}
+      >
+        {({ errors }) => (
+          <Form>
+            <div className={styles.inputGroup}>
+              <Field
+                name="search"
+                type="text"
+                placeholder="Search for any word"
+                className={`${errors.search ? styles.inputError : ""}`}
+              />
+
+              <button type="submit" className={styles.searchIcon}>
+                <Search />
+              </button>
+            </div>
+            <ErrorMessage
+              className={styles.error}
+              name="search"
+              component="div"
+            />
+          </Form>
+        )}
+      </Formik>
+    </>
   );
 }
 

@@ -3,50 +3,53 @@ import React from "react";
 import SearchedWord from "@/components/Dictionary/SearchedWord";
 import SearchInput from "@components/Dictionary/SearchInput";
 import { DICTIONARY_API } from "@/constants";
-import styles from "./Dictionary.module.css";
-import Meaning from "./Meanings";
+import Footer from "@components/Dictionary/Footer";
+import ErrorMessage from "@components/Dictionary/ErrorMessage";
+import Meaning from "@components/Dictionary/Meanings";
 
-import { ExternalLink } from "lucide-react";
+import styles from "./Dictionary.module.css";
 
 function Dictionary() {
   const [word, setWord] = React.useState("");
   const [wordMeanings, setWordMeanings] = React.useState(null);
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
 
   function handleSearchSubmit(word) {
     setWord(word);
-    setIsLoaded(true);
   }
 
   React.useEffect(() => {
-    if (!isLoaded) return;
+    if (!word) return;
 
     async function fetchMeaning(dictionaryAPI) {
-      const response = await fetch(dictionaryAPI);
-      const json = await response.json();
-      setWordMeanings(json);
+      try {
+        const response = await fetch(dictionaryAPI);
+        if (!response.ok) throw new Error("Invalid word");
+        const json = await response.json();
+        setWordMeanings(json);
+        setIsError(false);
+      } catch {
+        setIsError(true);
+      }
     }
     fetchMeaning(DICTIONARY_API + word);
-  }, [isLoaded, word]);
+  }, [word]);
 
   return (
     <>
       <SearchInput onSubmit={handleSearchSubmit} />
-      {wordMeanings?.map((wordMeaning, index) => {
-        const { sourceUrls } = wordMeaning;
-        return (
-          <div key={index}>
-            <SearchedWord {...wordMeaning} />
-            <Meaning {...wordMeaning} />
-            <p className={styles.sourceUrl}>
-              <span>Source:</span> {sourceUrls[0]}
-              <a target="_blank" href={sourceUrls}>
-                <ExternalLink />
-              </a>
-            </p>
-          </div>
-        );
-      })}
+      {isError && <ErrorMessage />}
+      {!isError &&
+        wordMeanings?.map((wordMeaning, index) => {
+          const { sourceUrls } = wordMeaning;
+          return (
+            <div key={index}>
+              <SearchedWord {...wordMeaning} />
+              <Meaning {...wordMeaning} />
+              <Footer sourceUrls={sourceUrls} />
+            </div>
+          );
+        })}
     </>
   );
 }

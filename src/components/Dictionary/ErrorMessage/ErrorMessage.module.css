@@ -1,0 +1,20 @@
+.errorMessage {
+  text-align: center;
+  margin-top: 13rem;
+}
+
+.emoji {
+  font-size: 6.4rem;
+  line-height: 1;
+}
+
+.errorMessage p:nth-child(2) {
+  font-weight: bold;
+  font-size: var(--font-heading-small);
+  margin: 3rem 0 2.4rem;
+}
+
+.message {
+  font-size: var(--font-body-medium);
+  color: hsl(0 0 46%);
+}

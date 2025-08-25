@@ -7,3 +7,14 @@
 .dictionary {
   margin-top: 4.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 572px) {
+  .App {
+    padding: 0 2.4rem;
+  }
+}
